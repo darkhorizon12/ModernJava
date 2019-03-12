@@ -2,23 +2,23 @@ package org.basic.chapter2;
 
 public class Apple {
 
-    private String color;
+    private ColorEnum color;
 
     private double weight;
 
     private String origin;
 
-    public Apple(String color, double weight, String origin) {
+    public Apple(ColorEnum color, double weight, String origin) {
         this.color = color;
         this.weight = weight;
         this.origin = origin;
     }
 
-    public String getColor() {
+    public ColorEnum getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(ColorEnum color) {
         this.color = color;
     }
 
