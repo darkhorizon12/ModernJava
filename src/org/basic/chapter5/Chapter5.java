@@ -1,22 +1,20 @@
 package org.basic.chapter5;
 
+import org.basic.CreateDish;
 import org.basic.Dish;
 
-import javax.swing.text.html.Option;
-import java.lang.reflect.Array;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.BinaryOperator;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 public class Chapter5 {
 
     public static void main(String[] args) {
-        List<Dish> dishes = createDishes();
+        List<Dish> dishes = CreateDish.createDishes();
 
 //        System.out.println(dishes.stream()
 //            .filter(d -> d.getType().equals(Dish.Type.OTHER))
@@ -56,36 +54,64 @@ public class Chapter5 {
 ////                .findAny()
 ////                .ifPresent(System.out::println);
 
-        Arrays.asList(1, 2, 3, 4, 5)
-                .stream()
-                .map(i -> i * i)
-                .filter(i -> i % 3 == 0)
-                .findFirst()
-                .ifPresent(System.out::println);
+//        Arrays.asList(1, 2, 3, 4, 5)
+//                .stream()
+//                .map(i -> i * i)
+//                .filter(i -> i % 3 == 0)
+//                .findFirst()
+//                .ifPresent(System.out::println);
 
 //        Optional<Integer> rst = Arrays.asList(4, 5, 3, 9)
 //                .stream()
 //                .reduce(Integer::min);
 //        System.out.println(rst.get());
 
-        int rst = dishes.stream()
-                    .map(d -> 1)
-                    .reduce(0, (a, b) -> a + b);
-        System.out.println(rst);
+//        int rst = dishes.stream()
+//                    .map(d -> 1)
+//                    .reduce(0, (a, b) -> a + b);
+//        System.out.println(rst);
 
-    }
+//        dishes.stream()
+//                .mapToInt(Dish::getCalories)
+//                .sum();
+//
+//
+//        OptionalInt maxCalory =
+//                dishes.stream()
+//                        .mapToInt(Dish::getCalories)
+//                        .max();
+//
+//
+//        Stream<double[]> pythoagoreanTriples =
+//                IntStream.rangeClosed(1, 100).boxed()
+//                        .flatMap(a -> IntStream.rangeClosed(a, 100)
+//                                .mapToObj(b -> new double[]{a, b, Math.sqrt(a * a + b * b)})
+//                                .filter(arr -> arr[2] % 1 == 0)
+//                        );
+//
+//        pythoagoreanTriples.limit(5)
+//                .forEach(arr -> System.out.println("{" + arr[0] + ", " + arr[1] + ", " + arr[2] + "}"));
 
-    private static List<Dish> createDishes() {
-        return Arrays.asList(
-                new Dish("pork", false, 800, Dish.Type.MEAT),
-                new Dish("beef", false, 700, Dish.Type.MEAT),
-                new Dish("chicken", false, 400, Dish.Type.MEAT),
-                new Dish("french fries", true, 530, Dish.Type.OTHER),
-                new Dish("rice", true, 350, Dish.Type.OTHER),
-                new Dish("season fruit", true, 120, Dish.Type.OTHER),
-                new Dish("pizza", true, 550, Dish.Type.OTHER),
-                new Dish("prawns", false, 300, Dish.Type.FISH),
-                new Dish("salmon", false, 450, Dish.Type.FISH)
-        );
+//        Stream.of("Java 8 ", "in ", "Action")
+//                .map(String::toUpperCase)
+//                .forEach(System.out::println);
+
+//        long uniqueWords = 0;
+//        try (Stream<String> lines =
+//                     Files.lines(Paths.get("/Users/juonkim/Documents/workspace-inflearn/ModernJava/src/org/basic/chapter5/test.txt"), Charset.defaultCharset())) {
+//
+//            uniqueWords = lines.flatMap(line -> Arrays.stream(line.split("")))
+//                                .distinct()
+//                                .count();
+//
+//            System.out.println("uniqueWords :: " + uniqueWords);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        Stream.iterate(new int[]{0, 1}, arrs -> new int[]{arrs[1], arrs[0] + arrs[1]})
+                .limit(20)
+                .forEach(arr -> System.out.println("(" + arr[0] + ", " + arr[1] + ")"));
     }
 }
