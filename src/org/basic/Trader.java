@@ -1,4 +1,4 @@
-package org.basic.chapter5.exercise;
+package org.basic;
 
 public class Trader {
     private final String name;
