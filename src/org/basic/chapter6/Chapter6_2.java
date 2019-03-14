@@ -9,11 +9,6 @@ import java.util.stream.IntStream;
 
 public class Chapter6_2 {
     public static void main(String[] args) {
-//        List<Dish> menus = CreateDish.createDishes();
-//
-//        List<Dish> dishes = menus.stream().collect(new ToListCollector<Dish>());
-//        dishes.forEach(System.out::println);
-
         long fastest = Long.MAX_VALUE;
         for (int i = 0; i < 10; i++) {
             long start = System.nanoTime();
