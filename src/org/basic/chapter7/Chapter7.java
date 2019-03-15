@@ -1,8 +1,7 @@
-package org.basic.Chapter7;
+package org.basic.chapter7;
 
 import java.util.Spliterator;
 import java.util.function.Function;
-import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -12,10 +11,10 @@ public class Chapter7 {
 //        int processorCnt = Runtime.getRuntime().availableProcessors();
 //        System.out.println("Processor count :: " + processorCnt);
 //
-//        System.out.println(measureSumPerformance(Chapter7::iterativeSum, 10_000_000));
-//        System.out.println(measureSumPerformance(Chapter7::sequentialSum, 10_000_000));
-//        System.out.println(measureSumPerformance(Chapter7::parallelSum, 10_000_000));
-//        System.out.println(measureSumPerformance(Chapter7::sideEffectSum, 10_000_000));
+//        System.out.println(measureSumPerformance(chapter7::iterativeSum, 10_000_000));
+//        System.out.println(measureSumPerformance(chapter7::sequentialSum, 10_000_000));
+//        System.out.println(measureSumPerformance(chapter7::parallelSum, 10_000_000));
+//        System.out.println(measureSumPerformance(chapter7::sideEffectSum, 10_000_000));
 
         final String SENTENCE =
                 " Nel mezzo del cammin di nostra vita " +

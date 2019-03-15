@@ -1,4 +1,4 @@
-package org.basic.Chapter7;
+package org.basic.chapter7;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;

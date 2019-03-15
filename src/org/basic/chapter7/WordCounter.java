@@ -1,4 +1,4 @@
-package org.basic.Chapter7;
+package org.basic.chapter7;
 
 public class WordCounter {
     private final int counter;
